@@ -9,4 +9,8 @@ import { UsersData } from '../user/user-data';
 })
 export class UserComponent {
   selectedUser = UsersData[0];
+
+  get imagePath() {
+    return 'assets/users/' + this.selectedUser.avatar;
+  }
 }
