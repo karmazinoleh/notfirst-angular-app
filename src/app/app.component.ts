@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserComponent } from "./user/user/user.component";
+import { UsersData } from './user/user/user-data';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,5 @@ import { UserComponent } from "./user/user/user.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'notfirst-angular-app';
+  users = UsersData;
 }

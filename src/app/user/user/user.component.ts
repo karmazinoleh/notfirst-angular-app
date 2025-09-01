@@ -1,4 +1,4 @@
-import { Component, signal, computed } from '@angular/core';
+import { Component, Input, input, computed } from '@angular/core';
 import { UsersData } from '../user/user-data';
 
 @Component({
@@ -8,15 +8,13 @@ import { UsersData } from '../user/user-data';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  selectedUser = signal(UsersData[0]);
-  imagePath = computed( () => 'assets/users/' + this.selectedUser().avatar);
+  @Input({required: true}) avatar!: string;
+  @Input({required: true}) name!: string;
 
-  //get imagePath() {
-  //  return 'assets/users/' + this.selectedUser.avatar;
-  //}
+  get imagePath(){
+    return 'assets/users/' + this.avatar;
+  }
 
   onSelectUser(){
-    this.selectedUser.set(UsersData[1]);
-    console.log('Clicked!');
   }
 }
