@@ -11,4 +11,8 @@ import { UsersData } from './user/user/user-data';
 })
 export class AppComponent {
   users = UsersData;
+
+  onSelectUser(id: number){
+    console.log('Selected user with id: ', id);
+  }
 }
