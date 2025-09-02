@@ -12,13 +12,13 @@ export class UserComponent {
   @Input({required: true}) avatar!: string;
   @Input({required: true}) name!: string;
   @Output() select = new EventEmitter<number>();
-  // selector = outpit<number>();
+  // select = outpit<number>();
 
   get imagePath(){
     return 'assets/users/' + this.avatar;
   }
 
-  onSelectUser(){
+  onSelectUser(){  
     this.select.emit(this.id)
   }
 }
