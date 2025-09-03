@@ -12,11 +12,11 @@ import { TasksComponent } from './tasks/tasks.component';
 })
 export class AppComponent {
   users = UsersData;
-  name = 'Select a user';
+  name?: string;
 
   onSelectUser(id: number){
     console.log('Selected user with id: ', id);
-    let selectedUser = this.users.find(user => user.id === id);
-    this.name = selectedUser ? selectedUser.name : 'Select a user';
+    let selectedUser = this.users.find(user => user.id === id)!;
+    this.name = selectedUser.name;
   }
 }
