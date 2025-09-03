@@ -16,7 +16,7 @@ export class AppComponent {
 
   onSelectUser(id: number){
     console.log('Selected user with id: ', id);
-    let selectedUser = this.users.find(user => user.id === id)!;
+    const selectedUser = this.users.find(user => user.id === id)!;
     this.name = selectedUser.name;
   }
 }
