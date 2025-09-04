@@ -41,4 +41,15 @@ export class TasksComponent {
   onCompleteTast(id: number) {
     this.tasks = this.tasks.filter(task => task.id !== id);
   }
+
+  addNewTask() {
+    const newTask = {
+      id: this.tasks.length + 1,
+      userId: this.userId,
+      title: `Task ${this.tasks.length + 1}`,
+      summary: `This is task ${this.tasks.length + 1}`,
+      dueDate: '2025-12-31',
+    };
+    this.tasks.push(newTask);
+  }
 }
