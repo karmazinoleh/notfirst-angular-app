@@ -4,6 +4,12 @@ import { UserComponent } from "./user/user/user.component";
 import { UsersData } from './user/user/user-data';
 import { TasksComponent } from './tasks/tasks.component';
 
+interface User {
+  id: number, 
+  name: string, 
+  avatar: string  
+}
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, UserComponent, TasksComponent],
@@ -12,11 +18,11 @@ import { TasksComponent } from './tasks/tasks.component';
 })
 export class AppComponent {
   users = UsersData;
-  name?: string;
+  //name?: string;
+  selectedUser?: User;
 
   onSelectUser(id: number){
     console.log('Selected user with id: ', id);
-    const selectedUser = this.users.find(user => user.id === id)!;
-    this.name = selectedUser.name;
+    this.selectedUser = this.users.find(user => user.id === id)!;
   }
 }
