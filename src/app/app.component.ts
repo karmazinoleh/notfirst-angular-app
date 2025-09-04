@@ -3,12 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { UserComponent } from "./user/user/user.component";
 import { UsersData } from './user/user/user-data';
 import { TasksComponent } from './tasks/tasks.component';
-
-interface User {
-  id: number, 
-  name: string, 
-  avatar: string  
-}
+import { type User } from './user/user/user.model'
 
 @Component({
   selector: 'app-root',
