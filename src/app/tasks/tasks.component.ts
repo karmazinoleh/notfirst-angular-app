@@ -33,7 +33,12 @@ export class TasksComponent {
       dueDate: '2025-10-10',
     },
   ]
+
   get selectedUserTasks(){
     return this.tasks.filter(task => task.userId === this.userId);
+  }
+
+  onCompleteTast(id: number) {
+    this.tasks = this.tasks.filter(task => task.id !== id);
   }
 }
