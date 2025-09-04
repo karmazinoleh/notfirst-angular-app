@@ -1,11 +1,25 @@
 img {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 50px;
+    max-height: 50px;
     border-radius: 50%;
+    position: relative;
 }
 button:active,
 button:hover,
 .active {
-    background-color: #007bff;
+    background-color: rgb(142, 14, 164);
     color: white;
+}
+button {
+    background-color: rgb(77, 10, 89);
+    border: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+span {
+    font-size: 20px;
+    margin-left: 12px;
 }

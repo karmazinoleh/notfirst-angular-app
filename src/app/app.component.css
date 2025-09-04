@@ -1,0 +1,28 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    min-width: 220px;
+    width: 250px;
+    flex-shrink: 0;
+}
+li {
+    margin: 12px 0;
+    max-width: 300px;
+    max-height: 150px;
+}
+#fallback {
+  font-size: 18px;
+  color: gray;
+  margin-top: 40px;
+}
+.main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 16px;
+}
+app-tasks {
+  flex-grow: 1;
+}
