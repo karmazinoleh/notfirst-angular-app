@@ -1,15 +1,17 @@
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from './task/task.component';
+import { NewTaskComponent } from './new-task/new-task.component';
 
 @Component({
   selector: 'app-tasks',
-  imports: [TaskComponent],
+  imports: [TaskComponent, NewTaskComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
   @Input({required: true}) userId!: number;
   @Input({required: true}) name?: string;
+  isAddingTask = false;
   tasks = [
     {
       id: 1,
@@ -43,13 +45,6 @@ export class TasksComponent {
   }
 
   addNewTask() {
-    const newTask = {
-      id: this.tasks.length + 1,
-      userId: this.userId,
-      title: `Task ${this.tasks.length + 1}`,
-      summary: `This is task ${this.tasks.length + 1}`,
-      dueDate: '2025-12-31',
-    };
-    this.tasks.push(newTask);
+    this.isAddingTask = true;
   }
 }
