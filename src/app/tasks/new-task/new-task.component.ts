@@ -1,18 +1,35 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+interface NewTask {
+  title: string,
+  summary: string,
+  dueDate: string,  
+}
 
 @Component({
   selector: 'app-new-task',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './new-task.component.html',
   styleUrl: './new-task.component.css'
 })
 export class NewTaskComponent {
-  @Output() action = new EventEmitter<boolean>();
+  @Output() close = new EventEmitter<void>();
+  @Output() create = new EventEmitter<NewTask>();
+  enteredTitle : string = '';
+  enteredSummary : string = ''
+  enteredDueDate : string = '';
 
   onCloseNewTask(){
-    this.action.emit(false);
+    this.close.emit();
   }
+
   onCreateNewTask(){
-    this.action.emit(false);
+    const newTask : NewTask = {
+      title: this.enteredTitle,
+      summary: this.enteredSummary,
+      dueDate: this.enteredDueDate,
+    };
+    this.create.emit(newTask);
   }
 }

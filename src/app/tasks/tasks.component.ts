@@ -48,7 +48,18 @@ export class TasksComponent {
     this.isAddingTask = true;
   }
 
-  onActionFromNewTask(action: boolean){
-    this.isAddingTask = action;
+  onActionFromNewTask(){
+    this.isAddingTask = false;
+  }
+
+  onCreateNewTask(newTask: any){
+    this.tasks.unshift({
+      id: this.tasks.length + 1,
+      userId: this.userId,
+      title: newTask.title,
+      summary: newTask.summary,
+      dueDate: newTask.dueDate,
+    });
+    this.isAddingTask = false;
   }
 }
