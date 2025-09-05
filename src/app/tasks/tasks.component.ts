@@ -47,4 +47,8 @@ export class TasksComponent {
   addNewTask() {
     this.isAddingTask = true;
   }
+
+  onActionFromNewTask(action: boolean){
+    this.isAddingTask = action;
+  }
 }
