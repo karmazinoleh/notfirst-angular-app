@@ -20,10 +20,6 @@ export class TasksComponent {
     return this.tasksService.getUserTasks(this.userId); 
   }
 
-  onCompleteTast(id: number) {
-    this.tasksService.removeTask(id);
-  }
-
   addNewTask() {
     this.isAddingTask = true;
   }
