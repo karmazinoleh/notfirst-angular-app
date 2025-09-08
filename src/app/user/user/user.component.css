@@ -11,6 +11,7 @@ button:hover,
     color: white;
 }
 button {
+    width: 100%;
     background-color: rgb(77, 10, 89);
     border: none;
     padding: 8px;
