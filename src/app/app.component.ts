@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-//import { RouterOutlet } from '@angular/router';
-//import { UserComponent } from "./user/user/user.component";
 import { UsersData } from './user/user/user-data';
-//import { TasksComponent } from './tasks/tasks.component';
 import { type User } from './user/user/user.model'
 
 @Component({
