@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { UserComponent } from "./user/user/user.component";
+//import { RouterOutlet } from '@angular/router';
+//import { UserComponent } from "./user/user/user.component";
 import { UsersData } from './user/user/user-data';
-import { TasksComponent } from './tasks/tasks.component';
+//import { TasksComponent } from './tasks/tasks.component';
 import { type User } from './user/user/user.model'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserComponent, TasksComponent],
+  //imports: [RouterOutlet, UserComponent, TasksComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  standalone: false,
 })
 export class AppComponent {
   users = UsersData;
